@@ -1,0 +1,17 @@
+ul, h2, table{
+
+    color: white;
+    width: 500px;
+
+}
+
+.date{
+    font-size: larger;
+}
+
+table, td, th{
+        margin: auto;
+        border: 1px solid wheat;
+        text-align: center;
+
+}

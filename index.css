@@ -1,0 +1,14 @@
+p, h1, h2, th, td{
+
+    color: white;
+
+}
+
+.images{
+    width: 800px;
+    height: 600px;
+}
+
+hr{
+    background-color: white;
+}

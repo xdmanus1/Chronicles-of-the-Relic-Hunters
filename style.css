@@ -1,0 +1,22 @@
+body{
+    background-color: #222222;
+}
+
+h1, p{
+    text-align: center;
+}
+
+#CS3{
+    font-size: 420%;
+}
+
+table, th, td{
+    margin: auto;
+    text-align: center;
+}
+
+iframe{
+    margin: center;
+    text-align: center;
+    align-self: auto;
+}

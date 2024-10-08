@@ -1,0 +1,13 @@
+iframe{
+    display: block;
+    margin: auto;
+}
+
+hr{
+    background-color: aliceblue;
+}
+
+p, h2{
+    color: white;
+    text-align: center;
+}

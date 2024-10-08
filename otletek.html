@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Own project CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+
+    <title class="navbar-name">Chronicles of the Relic Hunters</title>
+    <script>
+      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile Safari|Chrome Mobile|Firefox Mobile|Opera Mobile/i.test(navigator.userAgent)) {
+      window.location = "http://projektmunka.rf.gd/phone.html";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <strong>Chronicles of the Relic Hunters</strong>
+
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                <a class="nav-link" href="index.html">Kezdőlap <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="devlog.html">Devlog</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="game.html">Játék kipróbálása</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="developers.html">Fejlesztők</a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+      <br>
+    <form onsubmit="sendContact(event)">
+
+      <div class="mb-3">
+
+        <label for="dropdownInput" class="form-label" style="text-align: center;">Válasszon egy opciót.</label>
+
+        <select class="form-select" id="dropdownInput">
+
+          <option value="Probléma">Probléma</option>
+
+          <option value="Ötlet">Ötlet</option>
+
+        </select>
+
+      </div>
+
+      <div class="mb-3">
+
+        <label for="messageInput" class="form-label">Írja be problémáját vagy ötletét.</label>
+
+        <textarea class="form-control .bg-black" id="messageInput" rows="3"></textarea>
+
+      </div>
+
+      <button type="submit" class="btn btn-primary">Beküldés.</button>
+
+    </form>
+
+    <script>
+
+      async function sendContact(ev) {
+
+        ev.preventDefault();
+
+
+
+        const selectedOption = document
+
+          .getElementById('dropdownInput').value;
+
+        const senderMessage = document
+
+          .getElementById('messageInput').value;
+
+
+
+        const webhookBody = {
+
+          embeds: [{
+
+            title: 'Űrlap kitőltve.',
+
+            fields: [
+
+              { name: 'Opció.', value: selectedOption },
+
+              { name: 'Üzenet.', value: senderMessage }
+
+            ]
+
+          }],
+
+        };
+
+
+
+        const webhookUrl = 'https://discord.com/api/webhooks/1109892449217806517/RLEV5UdWjXRA1yoUG3f462bGKABqbYwHkK3MCiICQCVIicHLWWEAimXI4-GfJ-THF-kT';
+
+
+
+        const response = await fetch(webhookUrl, {
+
+          method: 'POST',
+
+          headers: {
+
+            'Content-Type': 'application/json',
+
+          },
+
+          body: JSON.stringify(webhookBody),
+
+        });
+
+
+
+        if (response.ok) {
+
+          alert('Az űrlap elküldése megtörtént.');
+
+        } else {
+
+          alert('Az űrlap küldése közben hiba történt próbálja meg később.');
+
+        }
+
+      }
+
+    </script>
+
+  </body>
+
+</html>
